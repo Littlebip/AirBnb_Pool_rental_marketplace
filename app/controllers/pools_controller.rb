@@ -8,5 +8,7 @@ class PoolsController < ApplicationController
 
   def set_pool
     @pool = Pool.find(params[:id])
+  def index
+    @pools = Pool.all
   end
 end

@@ -1,0 +1,16 @@
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon px-3">
+  <%= link_to root_path do %>
+    <%= image_tag "logo.png", alt: "alttext", class: "logo" %>
+  <% end %>
+
+  <div>
+    <ul class="navbar-nav me-auto">
+      <li class="nav-item active">
+        <%= link_to "Sign in", root_path, class: "nav-link" %>
+      </li>
+      <li class="nav-item active">
+        <%= link_to "Log in", new_pool_path, class: "nav-link" %>
+      </li>
+    </ul>
+  </div>
+</div>
