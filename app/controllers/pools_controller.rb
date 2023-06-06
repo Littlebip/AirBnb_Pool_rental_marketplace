@@ -3,7 +3,23 @@ class PoolsController < ApplicationController
     @pools = Pool.all
   end
 
+  def new
+    @pool = Pool.new
+  end
+
+  def create
+    @pool = Pool.create(pool_params)
+    redirect_to pool_path(@pool)
+  end
+
   def show
     @pool = Pool.new
   end
+
+  private
+
+  def pool_params
+    params.require(:pool).permit(:address, :size, :price, :details, :images)
+  end
+
 end
