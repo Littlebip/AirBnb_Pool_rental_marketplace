@@ -1,6 +1,5 @@
 <%= simple_form_for @pool do |f| %>
-  <%= f.input :address, label: "Where is your pool?" %>
-  <%= f.input :size, label: "What size is your pool?" %>
-  <%= f.input :price, label: "How much will it be?" %>
-  <%= f.submit class: "btn btn-primary mt-4" %>
-<% end %>
+    <%= f.input :address %>
+
+    <%= f.submit class: "btn btn-primary mt-4" %>
+  <% end %>
