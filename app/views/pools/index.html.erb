@@ -1,0 +1,22 @@
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://www.bauhaus.info/ovalpools/mypool-premium-stahlwand-pool-ovalbecken/p/26525101);">
+  <div class="container">
+    <h1><strong>Simple pool</strong></h1>
+    <p>Free your pool to the world!</p>
+    <a class="btn btn-flat" href="#">Rent a pool</a>
+  </div>
+</div>
+
+
+<div class= "pools-grid">
+<% @pools.each do |pool| %>
+<div class="card" style="width: 25rem;">
+<a class="btn btn-flat" href="#">Book now</a>
+  <img src="..." class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title"><%= pool.address %></h5>
+    <p class="card-text">Look at this pool</p>
+    <a href="#" class="btn btn-primary">Go somewhere</a>
+  </div>
+</div>
+<% end %>
+</div>
