@@ -1,4 +1,9 @@
 class PoolsController < ApplicationController
+  def show
+    set_pool
+    @booking = Booking.new
+  end
+
   def index
     @pools = Pool.all
   end
@@ -12,11 +17,10 @@ class PoolsController < ApplicationController
     redirect_to pool_path(@pool)
   end
 
-  def show
-    @pool = Pool.new
-  end
-
   private
+
+  def set_pool
+    @pool = Pool.find(params[:id])
 
   def pool_params
     params.require(:pool).permit(:address, :size, :price, :details, :images)
