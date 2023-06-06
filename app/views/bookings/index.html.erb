@@ -1,0 +1,18 @@
+<% @bookings.each do |booking| %>
+  <div class="container border m-3">
+    <ul class="list-group">
+      <li class="list-group-item">Starting on: <%= booking.start_date %></li>
+      <li class="list-group-item">Ending on: <%= booking.end_date %></li>
+      <li class="list-group-item">Total duration: <%= @duration = (booking.end_date - booking.start_date).numerator %>
+      <% if @duration == 1 %>
+        <%= 'day' %>
+      <% else %>
+        <%= 'days' %>
+      <% end %></li>
+      <li class="list-group-item">Daily price: <%= @pool.price %> €</li>
+      <li class="list-group-item">Total price <%= @pool.price * @duration %> €</li>
+      <li class="list-group-item">Options: <%= booking.details %></li>
+      <li class="list-group-item">Booking status: <%= booking.status %></li>
+    </ul>
+  </div>
+<% end %>
