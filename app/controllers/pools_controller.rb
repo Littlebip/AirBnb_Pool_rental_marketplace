@@ -3,35 +3,41 @@ class PoolsController < ApplicationController
     @pools = Pool.all
   end
 
+  ## not sure why this is here?
+  # def show
+  #   @booking = Booking.new
+  # end
+  ##
+
   def show
-    @booking = Booking.new
+    set_pool
   end
 
   def new
-    @Pool = Pool.new
+    @pool = Pool.new
   end
 
   def create
-    @Pool = Pool.new(Pool_params)
-    if @Pool.save
-      redirect_to Pool_path(@Pool)
+    @pool = Pool.new(pool_params)
+    if @pool.save
+      redirect_to pool_path(@pool)
     else
       render :new, status: :unprocessable_entity
     end
   end
 
   def destroy
-    @Pool.destroy
+    @pool.destroy
     redirect_to pools_path, status: :see_other
   end
 
   private
 
-  def set_Pool
-    @Pool = Pool.find(params[:id])
+  def set_pool
+    @pool = Pool.find(params[:id])
   end
 
-  def Pool_params
-    params.require(:Pool).permit(:address, :size, :price)
+  def pool_params
+    params.require(:pool).permit(:address, :size, :price)
   end
 end
