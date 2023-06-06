@@ -12,6 +12,9 @@ class PoolsController < ApplicationController
     redirect_to pool_path(@pool)
   end
 
+  def show
+    @pool = Pool.new
+  end
 
   private
 
