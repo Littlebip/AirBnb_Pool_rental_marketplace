@@ -1,6 +1,6 @@
 class PoolsController < ApplicationController
   def index
-    @pools = Pool.all
+    @pools = pool.all
   end
 
   def show
@@ -8,30 +8,30 @@ class PoolsController < ApplicationController
   end
 
   def new
-    @Pool = Pool.new
+    @pool = pool.new
   end
 
   def create
-    @Pool = Pool.new(Pool_params)
-    if @Pool.save
-      redirect_to Pool_path(@Pool)
+    @pool = pool.new(pool_params)
+    if @pool.save
+      redirect_to pool_path(@pool)
     else
       render :new, status: :unprocessable_entity
     end
   end
 
   def destroy
-    @Pool.destroy
+    @pool.destroy
     redirect_to pools_path, status: :see_other
   end
 
   private
 
-  def set_Pool
-    @Pool = Pool.find(params[:id])
+  def set_pool
+    @pool = pool.find(params[:id])
   end
 
-  def Pool_params
-    params.require(:Pool).permit(:address, :size, :price)
+  def pool_params
+    params.require(:pool).permit(:address, :size, :price)
   end
 end
