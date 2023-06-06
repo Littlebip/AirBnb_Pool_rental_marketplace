@@ -8,7 +8,7 @@ class PoolsController < ApplicationController
   end
 
   def new
-    @Pool = Pool.new
+    @pool = Pool.new
   end
 
   def create
