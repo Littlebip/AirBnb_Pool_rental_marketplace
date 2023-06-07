@@ -16,60 +16,63 @@
 # * bookings display (index of booking here!) + for each, can update the booking status %>
 
 <%# # can't switch pictures - later need to make it related to the user input %>
-<div id="carouselExampleIndicators" class="carousel slide">
-  <div class="carousel-indicators">
-    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+<div class="container">
+  <div id="carouselExampleIndicators" class="carousel slide">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    </div>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="https://source.unsplash.com/random/?pool" class="d-block w-100" alt="...">
+      </div>
+      <div class="carousel-item">
+        <img src="https://source.unsplash.com/random/?beach" class="d-block w-100" alt="...">
+      </div>
+      <div class="carousel-item">
+        <img src="https://source.unsplash.com/random/?lake" class="d-block w-100" alt="...">
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
   </div>
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-      <img src="https://source.unsplash.com/random/?pool" class="d-block w-100" alt="...">
-    </div>
-    <div class="carousel-item">
-      <img src="https://source.unsplash.com/random/?beach" class="d-block w-100" alt="...">
-    </div>
-    <div class="carousel-item">
-      <img src="https://source.unsplash.com/random/?lake" class="d-block w-100" alt="...">
-    </div>
-  </div>
-  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Previous</span>
-  </button>
-  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Next</span>
-  </button>
-</div>
 
-<%# # add a title and description? %>
-<div class="d-flex flex-row container">
-  <div class="details">
-    <div class="row row-cols-2">
-        <div class="col">
-          <div class="m-5">
-              <ul class="list-group">
-                <li class="list-group-item"><strong>Address:</strong><br><%= @pool.address %></li>
-                <li class="list-group-item"><strong>Price:</strong> <br>starting from <%= @pool.price %> € / day</li>
-              </ul>
+  <%# # add a title and description? %>
+  <div class="container mb-5">
+    <div class="details rounded">
+      <%# <div class="row row-cols-2"> %>
+          <%# <div class="col"> %>
+            <div class="m-5">
+                <ul class="list-group">
+                  <li class="list-group-item border bg-primary-subtle rounded-4 m-3 p-4 fs-4 text-center"><strong><%= @pool.title.nil? ? "Amazing Pool, perfect for all your pet parties!!" : @pool.title %></strong></li>
+                  <li class="list-group-item border m-3"><strong>Address:</strong><br><%= @pool.address %></li>
+                  <li class="list-group-item border m-3"><strong>Price:</strong> <br>starting from <%= @pool.price %> € / day</li>
+                </ul>
+            </div>
+          <%# </div> %>
+        <%# </div> %>
+    </div>
+
+    <div class="details rounded ">
+      <%# <div class="row row-cols-2"> %>
+        <%# <div class="col"> %>
+          <div class="border mb-5 p-3">
+            <%= simple_form_for [@pool, @booking] do |f| %>
+              <%= f.input :start_date, as: :date %>
+              <%= f.input :end_date, as: :date %>
+              <%= f.input :details, as: :select, collection: ['pets', 'toys', 'food & beverage']  %>
+              <%= f.submit %>
+            <% end %>
           </div>
-        </div>
-      </div>
-  </div>
-
-  <div class="details">
-    <div class="row row-cols-2">
-      <div class="col">
-        <div class="border">
-          <%= simple_form_for [@pool, @booking] do |f| %>
-            <%= f.input :start_date, as: :date %>
-            <%= f.input :end_date, as: :date %>
-            <%= f.input :details, as: :select, collection: ['pets', 'toys', 'food & beverage']  %>
-            <%= f.submit %>
-          <% end %>
-        </div>
-      </div>
+        <%# </div> %>
+      <%# </div> %>
     </div>
   </div>
 </div>
