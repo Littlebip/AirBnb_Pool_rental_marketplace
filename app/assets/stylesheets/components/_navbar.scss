@@ -3,6 +3,11 @@
   background: white;
 }
 
+#navbarSupportedContent{
+  display:flex;
+  justify-content: flex-end;
+}
+
 .logo {
   width: 60px;
 }
