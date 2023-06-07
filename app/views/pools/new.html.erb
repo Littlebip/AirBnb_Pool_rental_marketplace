@@ -2,7 +2,7 @@
 <img alt="alttext" class="logo" id = "big_logo" src="/assets/logo-3722a5ec6c8018adecb2095d15ff8f059c1afabf45a659c7ba8afcf1c59afbc0.png">
 <p class = "slogan"><strong> Your dive, made simple <strong><p>
 </div>
-<div class = "container ">
+<div class = "container " id = "new_header">
   <br>
   <br>
   <br>
@@ -13,6 +13,7 @@
       <%= simple_form_for @pool do |f| %>
       <div class="d-flex">
         <div>
+          <%= f.input :title, label: "What is the name of the pool?" %>
           <%= f.input :address, label: "Where is your pool?" %>
           <%= f.input :size, label: "What size is your pool?" %>
           <%= f.input :price, label: "How much will it be?" %>

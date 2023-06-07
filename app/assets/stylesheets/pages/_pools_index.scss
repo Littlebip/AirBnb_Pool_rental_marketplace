@@ -1,6 +1,6 @@
 .pools-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
   border: 1px solid;
 
 .banner {
@@ -10,21 +10,6 @@
   font-weight: lighter;
   opacity: 0.6;
   transition: opacity 0.3s ease;
-
 }
-
-
-  .btn btn-flat {
-    color: #4A4A4A;
-    border: 1px solid #4A4A4A;
-    padding: 8px 24px;
-    border-radius: 50px;
-    font-weight: lighter;
-    opacity: 0.6;
-    transition: opacity 0.3s ease;
-}
-
-
-
 
 }
