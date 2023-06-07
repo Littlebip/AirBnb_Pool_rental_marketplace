@@ -52,23 +52,23 @@
             <div class="m-5">
                 <ul class="list-group">
                   <li class="list-group-item border bg-primary-subtle rounded-4 m-3 p-4 fs-4 text-center"><strong><%= @pool.title.nil? ? "Amazing Pool, perfect for all your pet parties!!" : @pool.title %></strong></li>
-                  <li class="list-group-item border m-3"><strong>Address:</strong><br><%= @pool.address %></li>
-                  <li class="list-group-item border m-3"><strong>Price:</strong> <br>starting from <%= @pool.price %> € / day</li>
+                  <li class="list-group-item border bg-light p-4 rounded-4 m-3"><strong>Address:</strong><br><%= @pool.address %></li>
+                  <li class="list-group-item border bg-light p-4 rounded-4 m-3"><strong>Price:</strong> <br>starting from <%= @pool.price %> € / day</li>
                 </ul>
             </div>
           <%# </div> %>
         <%# </div> %>
     </div>
 
-    <div class="details rounded ">
+    <div class="details bg-light p-4 rounded-4">
       <%# <div class="row row-cols-2"> %>
         <%# <div class="col"> %>
-          <div class="border mb-5 p-3">
-            <%= simple_form_for [@pool, @booking] do |f| %>
+          <div class="mb-5 p-3">
+            <%= simple_form_for [@pool, @booking], defaults: { label_html: { class: 'fw-bold' }, input_html: { class: 'bg-light rounded-4' } } do |f| %>
               <%= f.input :start_date, as: :date %>
               <%= f.input :end_date, as: :date %>
               <%= f.input :details, as: :select, collection: ['pets', 'toys', 'food & beverage']  %>
-              <%= f.submit %>
+              <%= f.button :submit, "Book now!", class: "btn btn-primary rounded-pill p-2 ps-4 pe-4" %>
             <% end %>
           </div>
         <%# </div> %>
