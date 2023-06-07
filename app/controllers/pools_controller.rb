@@ -13,7 +13,9 @@ class PoolsController < ApplicationController
   end
 
   def create
-    @pool = Pool.create(pool_params)
+    @pool = Pool.new(pool_params)
+    @pool.user = current_user
+    @pool.save
     redirect_to pool_path(@pool)
   end
 
