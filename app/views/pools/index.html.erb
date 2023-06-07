@@ -10,10 +10,10 @@
 <div class= "pools-grid">
 <% @pools.each do |pool| %>
 <div class="card" style="width: 18rem;">
-  <%=img src="https://www.poolsana.de/media/image/56/0c/a8/oval-folie-grau-hl-grau-2022_600x600@2x.jpg">
-  <div class="card-body"%>
+  <img src="https://www.poolsana.de/media/image/56/0c/a8/oval-folie-grau-hl-grau-2022_600x600@2x.jpg">
+  <div class="card-body">
     <h5 class="card-title">Pool name</h5>
-  <%#= link_to "Book", /pools/:pool_id/bookings, class: "btn btn-ghost" %>
+  <%= link_to "Book", pool_path(pool), class: "btn btn-ghost" %>
   </div>
 </div>
 <% end %>
