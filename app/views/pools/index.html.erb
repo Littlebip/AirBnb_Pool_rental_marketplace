@@ -1,20 +1,20 @@
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://img.freepik.com/free-vector/abstract-aqua-green-blue-watercolor-splash-texture_1017-31339.jpg?w=1380&t=st=1686119034~exp=1686119634~hmac=81c1e53d71ad03dc8ff4c276ed3e0b112977f7b58ca754af21209b836a2fddef);">
   <div class="container">
-    <h1><strong>Simple pool</strong></h1>
-    <p>Free our pools to the world</p>
-   <%= link_to "Rent your pool", new_pool_path, class: "btn btn-ghost" %>
+    <h1 class="fw-bold fs-1 text-center"><strong>SimPool</strong></h1>
+    <h2 class="fs-2 text-center">Free our pools to the world / Rent a pool. Enjoy. Repeat.</h2>
+   <%= link_to "Rent your pool", new_pool_path, class: "btn btn-primary fs- 3 fw-bold rounded-pill" %>
   </div>
 </div>
 
 
-<div class= "pools-grid">
-<% @pools.each do |pool| %>
-<div class="card" style="width: 18rem;">
-  <%=img src="https://www.poolsana.de/media/image/56/0c/a8/oval-folie-grau-hl-grau-2022_600x600@2x.jpg">
-  <div class="card-body"%>
-    <h5 class="card-title">Pool name</h5>
-  <%#= link_to "Book", /pools/:pool_id/bookings, class: "btn btn-ghost" %>
-  </div>
-</div>
-<% end %>
+<div class= "container pools-grid">
+  <% @pools.each do |pool| %>
+    <div class="card" style="width: 18rem;">
+      <img src="https://source.unsplash.com/random/?pool">
+      <div class="card-body"%>
+        <h5 class="card-title"><%= pool.title.nil? ? "Amazing Pool, perfect for all your pet parties!!" : pool.title %></h5>
+        <p><%= pool.price %> €</p>
+      </div>
+    </div>
+  <% end %>
 </div>

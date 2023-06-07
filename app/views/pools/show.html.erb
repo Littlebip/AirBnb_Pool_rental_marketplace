@@ -1,19 +1,4 @@
-<%# # this page will inherit a navbar and a footer from shared partials
-
-## renter view
-# photo carousel
-# pool title and owner photo
-# pool description
-# new booking form --- what happens when we submit?
-
-## owner view (nb : for now no editing / updating of the offer)
-# photo carousel
-# pool title and owner photo
-# pool description
-# * pool data -- optional
-# * pool delete -- later
-# * pool update button -- later
-# * bookings display (index of booking here!) + for each, can update the booking status %>
+<%# if current_user == @pool.user_id  ---- display admin view %>
 
 <%# # can't switch pictures - later need to make it related to the user input %>
 <div class="container">
@@ -60,19 +45,23 @@
         <%# </div> %>
     </div>
 
-    <div class="details bg-light p-4 rounded-4">
-      <%# <div class="row row-cols-2"> %>
-        <%# <div class="col"> %>
-          <div class="mb-5 p-3">
-            <%= simple_form_for [@pool, @booking], defaults: { label_html: { class: 'fw-bold' }, input_html: { class: 'bg-light rounded-4' } } do |f| %>
-              <%= f.input :start_date, as: :date %>
-              <%= f.input :end_date, as: :date %>
-              <%= f.input :details, as: :select, collection: ['pets', 'toys', 'food & beverage']  %>
-              <%= f.button :submit, "Book now!", class: "btn btn-primary rounded-pill p-2 ps-4 pe-4" %>
-            <% end %>
-          </div>
+    <% if current_user.id == @pool.user_id %>
+      <%= link_to "See my bookings", pool_bookings_path(@pool), class: "btn btn-primary fs- 3 fw-bold rounded-pill mb-5" %>
+    <% else %>
+      <div class="details bg-light p-4 rounded-4">
+        <%# <div class="row row-cols-2"> %>
+          <%# <div class="col"> %>
+            <div class="mb-5 p-3">
+              <%= simple_form_for [@pool, @booking], defaults: { label_html: { class: 'fw-bold' }, input_html: { class: 'bg-light rounded-4' } } do |f| %>
+                <%= f.input :start_date, as: :date %>
+                <%= f.input :end_date, as: :date %>
+                <%= f.input :details, as: :select, collection: ['pets', 'toys', 'food & beverage']  %>
+                <%= f.button :submit, "Book now!", class: "btn btn-primary rounded-pill p-2 ps-4 pe-4" %>
+              <% end %>
+            </div>
+          <%# </div> %>
         <%# </div> %>
-      <%# </div> %>
-    </div>
+      </div>
+    <% end %>
   </div>
 </div>
