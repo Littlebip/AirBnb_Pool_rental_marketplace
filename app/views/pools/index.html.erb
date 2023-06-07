@@ -7,17 +7,16 @@
 </div>
 
 
-<div class= "container pools-grid">
+<div class= "pools-grid">
   <% @pools.each do |pool| %>
     <div class="card" style="width: 18rem;">
-    <% counter = 1 %>
-      <img src="https://source.unsplash.com/random/?pool=<%= counter %>">
+    <% counter = ['tropical', 'beach', 'sun', 'cocktail', 'sunglasses', 'hat', 'summer'] %>
+      <img src="https://source.unsplash.com/random/?pool,<%= counter.sample %>">
       <div class="card-body"%>
         <%= link_to pool.title.nil? ? "Amazing Pool, perfect for all your pet parties!!" : pool.title, pool_path(pool), class: "nav-link" %>
         <%# <h5 class="card-title"><%= pool.title.nil? ? "Amazing Pool, perfect for all your pet parties!!" : pool.title </h5> %>
         <p><%= pool.price %> €</p>
       </div>
     </div>
-    <% counter += 1 %>
   <% end %>
 </div>
