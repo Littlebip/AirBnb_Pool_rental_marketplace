@@ -2,7 +2,7 @@
   <div class="container">
     <h1><strong>Simple pool</strong></h1>
     <p>Free our pools to the world</p>
-   <a class="btn btn-ghost">Rent your pool</a>
+   <%= link_to "Rent your pool", new_pool_path, class: "btn btn-ghost" %>
   </div>
 </div>
 
@@ -10,15 +10,11 @@
 <div class= "pools-grid">
 <% @pools.each do |pool| %>
 <div class="card" style="width: 18rem;">
-  <img src="https://www.poolsana.de/media/image/56/0c/a8/oval-folie-grau-hl-grau-2022_600x600@2x.jpg">
-  <div class="card-body">
-    <h5 class="card-title"><%= pool.address %></h5>
-    <h6 class="card-title">€<%= pool.size %></h6>
-      <p class="card-title"><%= pool.price%></p>
-    <a href="#" class="btn btn-primary">Book</a>
+  <%=img src="https://www.poolsana.de/media/image/56/0c/a8/oval-folie-grau-hl-grau-2022_600x600@2x.jpg">
+  <div class="card-body"%>
+    <h5 class="card-title">Pool name</h5>
+  <%#= link_to "Book", /pools/:pool_id/bookings, class: "btn btn-ghost" %>
   </div>
 </div>
 <% end %>
 </div>
-
-€
