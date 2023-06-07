@@ -21,9 +21,9 @@ class PoolsController < ApplicationController
 
   def set_pool
     @pool = Pool.find(params[:id])
+  end
 
   def pool_params
     params.require(:pool).permit(:address, :size, :price, :details, :images)
   end
-
 end
