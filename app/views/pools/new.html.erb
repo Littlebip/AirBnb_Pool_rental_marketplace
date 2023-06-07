@@ -1,6 +1,14 @@
-<div class = "container pt-5">
+<div class = 'container justify-content-center' id = "new_header">
+<img alt="alttext" class="logo" id = "big_logo" src="/assets/logo-3722a5ec6c8018adecb2095d15ff8f059c1afabf45a659c7ba8afcf1c59afbc0.png">
+<p class = "slogan"><strong> Your dive, made simple <strong><p>
+</div>
+<div class = "container ">
+  <br>
+  <br>
+  <br>
   <div class = "row justify-content-center">
     <div class="col-12 col-lg-8">
+
       <h3> Create a listing </h3>
       <%= simple_form_for @pool do |f| %>
       <div class="d-flex">
@@ -8,13 +16,13 @@
           <%= f.input :address, label: "Where is your pool?" %>
           <%= f.input :size, label: "What size is your pool?" %>
           <%= f.input :price, label: "How much will it be?" %>
-          <%= f.input :images, label: "Add an image" %>
+          <%= f.input :images, as: :file, label: "Add an image" %>
           </div>
           <div>
-          <%= f.input :details, label: "Add a description", class: "description-input", input_html: { placeholder: "How many people fit in your pool?" } %>
+          <%= f.input :details, label: "-", class: "description-input", input_html: { placeholder: "Add a description here" } %>
 
 
-          <%= f.submit "Put Online!", class: "btn btn-primary mt-4" %>
+          <%= f.submit "Put Online!", class: "btn btn-primary mt-4 btn_onl" %>
           </div>
       </div>
         <% end %>
