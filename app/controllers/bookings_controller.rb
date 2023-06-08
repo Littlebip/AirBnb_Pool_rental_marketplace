@@ -14,10 +14,9 @@ class BookingsController < ApplicationController
     if @booking.save
       redirect_to pool_bookings_path(@pool)
     else
-      render :create, status: :unprocessable_entity
+      redirect_to pool_path(@pool), status: :unprocessable_entity
     end
   end
-  # not sure here if the user is referring to the owner or renter??
 
   private
 

@@ -64,10 +64,16 @@
           <%# <div class="col"> %>
             <div class="m-5">
                 <ul class="list-group">
+<<<<<<< HEAD
+                  <li class="show-list list-group-item border rounded-4 m-3 p-4 fs-4 text-center"><strong><%= @pool.title.nil? ? "Amazing Pool, perfect for all your pet parties!!" : @pool.title %></strong></li>
+                  <li class="show-list list-group-item border p-4 rounded-4 m-3"><strong>Address:</strong><br><%= @pool.address %></li>
+                  <li class="show-list list-group-item border p-4 rounded-4 m-3"><strong>Price:</strong> <br>starting from <%= @pool.price %> € / day</li>
+=======
                   <li class="list-group-item border bg-primary-subtle rounded-4 m-3 p-4 fs-4 text-center"><strong><%= @pool.title.nil? ? "Amazing Pool, perfect for all your pet parties!!" : @pool.title %></strong></li>
                   <li class="list-group-item border bg-primary-subtle rounded-4 m-3 p-4 fs-4 text-center"><%= @pool.details %></li>
                   <li class="list-group-item border bg-light p-4 rounded-4 m-3"><strong>Address:</strong><br><%= @pool.address %></li>
                   <li class="list-group-item border bg-light p-4 rounded-4 m-3"><strong>Price:</strong> <br>starting from <%= @pool.price %> € / day</li>
+>>>>>>> master
                 </ul>
             </div>
           <%# </div> %>
@@ -81,11 +87,11 @@
         <%# <div class="row row-cols-2"> %>
           <%# <div class="col"> %>
             <div class="mb-5 p-3">
-              <%= simple_form_for [@pool, @booking], defaults: { label_html: { class: 'fw-bold' }, input_html: { class: 'bg-light rounded-4' } } do |f| %>
+              <%= simple_form_for [@pool, @booking], defaults: { label_html: { class: 'fw-bold' }, input_html: { class: 'show-list rounded-4' } } do |f| %>
                 <%= f.input :start_date, as: :date %>
                 <%= f.input :end_date, as: :date %>
                 <%= f.input :details, as: :select, collection: ['pets', 'toys', 'food & beverage']  %>
-                <%= f.button :submit, "Book now!", class: "btn btn-primary rounded-pill p-2 ps-4 pe-4" %>
+                <%= f.button :submit, "Book now!", class: "button-main" %>
               <% end %>
             </div>
           <%# </div> %>
