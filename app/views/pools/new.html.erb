@@ -1,7 +1,7 @@
-<div class = 'container justify-content-center' id = "new_header">
+<%# <div class = 'container justify-content-center' id = "new_header">
 <img alt="alttext" class="logo" id = "big_logo" src="/assets/SimPool logo - detoured.png">
 <p class = "slogan">Rent somebody's pool. Rent your pool to others.<p>
-</div>
+</div> %>
 <div class = "container " id = "new_header">
   <br>
   <br>
@@ -21,7 +21,7 @@
           </div>
           <div>
           <%= f.input :details, label: "-", class: "description-input", input_html: { placeholder: "Add a description here" } %>
-          <%= f.submit "Put Online!", class: "button-main" %>
+          <%= f.submit "Put Online!", class: "button-main new-form-btn" %>
           </div>
       </div>
         <% end %>
