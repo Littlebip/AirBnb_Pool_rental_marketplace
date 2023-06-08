@@ -63,3 +63,10 @@ create_pool(8, @file6)
 create_pool(9, @file8)
 
 puts "Seeding finished! Pools ids start from #{Pool.first.id}!"
+
+# pool = Pool.first
+# pool.images.attach(io: file_two, filename: "pool66.jpg", content_type: "image/jpg")
+
+# puts "First pool updated!"
+
+# seed bookings?

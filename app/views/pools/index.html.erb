@@ -15,14 +15,13 @@
 
 
 <div class= "pools-grid" id="pools">
-  <% @pools.each do |pool| %>
+  <% @pools.reverse.each do |pool| %>
     <%= link_to pool_path(pool), class: "nav-link" do %>
       <div class="card" style="width: 18rem;">
         <%= cl_image_tag pool.images.first.key, crop: :fill %>
         <div class="card-body">
-
           <h5 class="card-title"><%= pool.title.nil? ? "Amazing pool, perfect for all your summer parties!" : pool.title %></h5>
-          <p><i class="fa-solid fa-euro-sign"></i><%= pool.price %> €</p>
+          <p><i class="fa-solid fa-euro-sign"></i><%= pool.price %></p>
           <% if pool.user_id == current_user.id %>
             <p><i class="fa-solid fa-face-smile-wink"></i> My pool</p>
           <%# <% elsif pool.booking.user_id == current_user.id && pool.booking.status == "accepted" %>
