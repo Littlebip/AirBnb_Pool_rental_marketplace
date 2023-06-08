@@ -3,14 +3,14 @@
   font-weight: 800;
   border-radius: 25px;
   text-decoration: none;
-  background-color: $deep-blue;
+  background-color: $darkerblue;
   box-shadow: 3px 3px 9px grey;
-  color: $yellow;
+  color: $whiteblue;
   padding: 15px 30px;
   transition: all 0.3s;
 }
 
 .button-main:hover {
-  background-color: $orange;
-  color: $deep-blue;
+  background-color: $lightishblue;
+  color: $darkerblue;
 }

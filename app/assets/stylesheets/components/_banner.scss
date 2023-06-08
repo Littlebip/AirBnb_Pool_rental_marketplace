@@ -10,7 +10,7 @@
 
 .banner h1 {
   margin: 0;
-  color: #023047;
+  color: $darkerblue;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   font-size: 100px;
   font-weight: bold;
@@ -18,7 +18,7 @@
 
 .banner h2 {
   // font-size: 20px;
-  color: #023047;
+  color: $darkerblue;
   // opacity: .7;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   font-weight: 400;
