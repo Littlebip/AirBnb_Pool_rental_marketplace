@@ -17,7 +17,7 @@
           <%= f.input :address, label: "Where is your pool?" %>
           <%= f.input :size, label: "What size is your pool?" %>
           <%= f.input :price, label: "How much will it be?" %>
-          <%= f.input :images, as: :file, label: "Add an image" %>
+          <%= f.input :images, as: :file, label: "Add images", input_html: { multiple: true } %>
           </div>
           <div>
           <%= f.input :details, label: "-", class: "description-input", input_html: { placeholder: "Add a description here" } %>

@@ -1,35 +1,63 @@
 <%# if current_user == @pool.user_id  ---- display admin view %>
 
-<%# # can't switch pictures - later need to make it related to the user input %>
+<%# cloudinary current status: 1/ can't display more than 3 pictures in total 2/need a dichotomy between active-inactive %>
 <div class="container">
-  <div id="carouselExampleIndicators" class="carousel slide">
-    <div class="carousel-indicators">
-      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+  <% if @pool.images.exists? %>
+    <div id="carouselTailored" class="carousel slide">
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselTailored" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselTailored" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselTailored" data-bs-slide-to="2" aria-label="Slide 3"></button>
+      </div>
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="https://source.unsplash.com/random/?pool" class="d-block w-100" alt="...">
+        </div>
+        <% @pool.images.each do |image| %>
+          <div class="carousel-item">
+            <%# <img src="https://source.unsplash.com/random/?pool,sun" class="d-block w-100" alt="..."> %>
+            <%= cl_image_tag image.key, height: 300, width: 400, crop: :fill %>
+          </div>
+        <% end %>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselTailored" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselTailored" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
     </div>
-    <div class="carousel-inner">
-      <div class="carousel-item active">
-        <img src="https://source.unsplash.com/random/?pool" class="d-block w-100" alt="...">
+  <% else %>
+    <div id="carouselExampleIndicators" class="carousel slide">
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
       </div>
-      <div class="carousel-item">
-        <img src="https://source.unsplash.com/random/?beach" class="d-block w-100" alt="...">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="https://source.unsplash.com/random/?pool" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+          <img src="https://source.unsplash.com/random/?pool,sun" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+          <img src="https://source.unsplash.com/random/?pool,summer,swimming" class="d-block w-100" alt="...">
+        </div>
       </div>
-      <div class="carousel-item">
-        <img src="https://source.unsplash.com/random/?lake" class="d-block w-100" alt="...">
-      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
     </div>
-    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Previous</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Next</span>
-    </button>
-  </div>
+  <% end %>
 
-  <%# # add a title and description? %>
   <div class="container mb-5">
     <div class="details rounded">
       <%# <div class="row row-cols-2"> %>
@@ -37,6 +65,7 @@
             <div class="m-5">
                 <ul class="list-group">
                   <li class="list-group-item border bg-primary-subtle rounded-4 m-3 p-4 fs-4 text-center"><strong><%= @pool.title.nil? ? "Amazing Pool, perfect for all your pet parties!!" : @pool.title %></strong></li>
+                  <li class="list-group-item border bg-primary-subtle rounded-4 m-3 p-4 fs-4 text-center"><%= @pool.details %></li>
                   <li class="list-group-item border bg-light p-4 rounded-4 m-3"><strong>Address:</strong><br><%= @pool.address %></li>
                   <li class="list-group-item border bg-light p-4 rounded-4 m-3"><strong>Price:</strong> <br>starting from <%= @pool.price %> € / day</li>
                 </ul>
