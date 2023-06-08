@@ -1,10 +1,13 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Simple pool</title>
+    <title>Simpool</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Mukta+Malar:wght@500&family=Tsukimi+Rounded:wght@300;500&display=swap" rel="stylesheet">
+
+    <link href="https://api.mapbox.com/mapbox-gl-js/v2.11.0/mapbox-gl.css" rel="stylesheet">
+    <script src="https://api.mapbox.com/mapbox-gl-js/v2.11.0/mapbox-gl.js"></script>
     <style>
     @import url('https://fonts.googleapis.com/css2?family=Mukta+Malar:wght@500&display=swap');
     </style
@@ -18,7 +21,7 @@
 
   <body>
     <%= render 'shared/navbar' %>
+        <%= yield %>
     <%= render 'shared/footer' %>
-    <%= yield %>
   </body>
 </html>
