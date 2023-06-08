@@ -24,6 +24,10 @@ class BookingsController < ApplicationController
     @pool = Pool.find(params[:pool_id])
   end
 
+  def set_booking
+    set_pool
+  end
+
   def booking_params
     params.require(:booking).permit(:start_date, :end_date, :details)
   end
