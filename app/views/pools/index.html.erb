@@ -18,8 +18,7 @@
   <% @pools.each do |pool| %>
     <%= link_to pool_path(pool), class: "nav-link" do %>
       <div class="card" style="width: 18rem;">
-        <% counter = ['sun', 'cocktail', 'sunglasses', 'hat', 'summer', 'swimming'] %>
-        <img src="https://source.unsplash.com/random/?pool,<%= counter.sample %>">
+        <%= cl_image_tag pool.images.first.key, crop: :fill %>
         <div class="card-body">
           <h5 class="card-title"><%= pool.title.nil? ? "Amazing pool, perfect for all your summer parties!!" : pool.title %></h5>
           <p><%= pool.price %> €</p>
