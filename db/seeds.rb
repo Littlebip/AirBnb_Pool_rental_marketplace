@@ -6,7 +6,7 @@ Booking.destroy_all
 Pool.destroy_all
 
 SIZES = ["small", "medium", "large"]
-DESC_TITLE = ["Cute little swimming pool in the middle of the forest", "The best playground for all pet lovers!", "Quiet swimming pool retreat", "Fun urban pool with many toys available", "The best pool of the city!", "Waterfall pool on the seaside", "Medium-sized pool for young and old", "Countryside garden pool to rent!", "Homestay comfortable and fun, with a great pool!", "Amazing rooftop pool!"]
+DESC_TITLE = ["Cute little swimming pool in the middle of the forest", "The best pool playground for all pet lovers!", "Quiet swimming pool retreat for busy people", "Fun urban pool with many toys available", "The best pool in the city! Rent it before it's too late!", "Waterfall pool by the seaside, available by night too", "Medium-sized pool for young and old", "Countryside garden pool to rent! Best seller for five years now!", "Comfortable and fun homestay, with a great pool!", "Amazing rooftop pool! Don't miss our custom cocktail maker!"]
 DESC_DETAILS = ["The water in the pool is blue as the sky.", "The cool blue water of the pool is refreshing mind and body.", "Come and enjoy a nice and free time in our pool!"]
 
 puts "Creating users..."
