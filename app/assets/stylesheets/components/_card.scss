@@ -2,6 +2,18 @@
   overflow: hidden;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  transition: all 0.3s;
+}
+
+.card:hover {
+  color: $orange;
+  font-weight: bolder;
+}
+
+.card:active {
+  background-color: $deep-blue;
+  border: 3px solid $deep-blue;
+  box-shadow: none;
 }
 
 .card > img {
