@@ -1,10 +1,10 @@
-<%# <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://img.freepik.com/free-vector/abstract-aqua-green-blue-watercolor-splash-texture_1017-31339.jpg?w=1380&t=st=1686119034~exp=1686119634~hmac=81c1e53d71ad03dc8ff4c276ed3e0b112977f7b58ca754af21209b836a2fddef);"> %>
-<div class="banner">
-  <div class="banner-content">
-    <%= image_tag "SimPool logo - detoured.png", alt: "SimPool logo", id: "banner-logo" %>
+
+<div class="banner ">
+  <div class="banner-content justify-content-center">
+  <%=image_tag "SimPool logo - detoured.png", alt: "SimPool logo", id: "banner-logo" %>
   </div>
   <div class="banner-content banner-body">
-    <h1 class="fs-2 text-center">Rent a pool. Enjoy. Repeat.</h1>
+    <h1 class="fs-2 text-center">Rent somebody's pool. Rent your pool to others.</h1>
     <h2>
       <%= link_to "Choose a pool", "#pools", class: "button-main", id: "banner-btn" %>
      or
@@ -14,27 +14,14 @@
 </div>
 
 
-<div class= "pools-grid">
-<% @pools.each do |pool| %>
-<div class="card" style="width: 18rem;">
-  <img src="https://www.poolsana.de/media/image/56/0c/a8/oval-folie-grau-hl-grau-2022_600x600@2x.jpg">
-  <div class="card-body">
-    <h5 class="card-title">Pool name</h5>
-  <%= link_to "Book", pool_path(pool), class: "btn btn-ghost" %>
-  </div>
-</div>
-<% end %>
-
-<div class= "container pools-grid">
-
 <div class= "pools-grid" id="pools">
   <% @pools.each do |pool| %>
     <%= link_to pool_path(pool), class: "nav-link" do %>
-      <div class="card" style="width: 18rem;">
+      <div class="card rounded" style="width: 18rem;">
         <% counter = ['sun', 'cocktail', 'sunglasses', 'hat', 'summer', 'swimming'] %>
         <img src="https://source.unsplash.com/random/?pool,<%= counter.sample %>">
         <div class="card-body">
-          <h5 class="card-title"><%= pool.title.nil? ? "Amazing pool, perfect for all your summer parties!!" : pool.title %></h5>
+          <h5 class="card-title"><%= pool.title.nil? ? "Amazing pool, perfect for all your summer parties!" : pool.title %></h5>
           <p><%= pool.price %> €</p>
         </div>
       </div>

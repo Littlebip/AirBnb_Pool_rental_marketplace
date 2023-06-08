@@ -3,7 +3,7 @@ require 'faker'
 puts "Cleaning database..."
 Pool.destroy_all
 
-SIZES = ["small", "medium", "large"]
+SIZES = ["Small", "Medium", "Large"]
 
 puts "Creating users..."
 @user_ayub = User.create(username: "ayub", email: "ayub@gmail.com", password: "123456")
