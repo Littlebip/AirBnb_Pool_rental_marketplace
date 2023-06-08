@@ -10,10 +10,10 @@ DESC_TITLE = ["Cute little swimming pool in the middle of the forest", "The best
 DESC_DETAILS = ["The water in the pool is blue as the sky.", "The cool blue water of the pool is refreshing mind and body.", "Come and enjoy a nice and free time in our pool!"]
 
 puts "Creating users..."
-@user_ayub = User.create(username: "ayub", email: "ayub@gmail.com", password: "123456")
-@user_lucile = User.create(username: "lucile", email: "lucile@gmail.com", password: "123456")
-@user_shuqi = User.create(username: "shuqi", email: "shuqi@gmail.com", password: "123456")
-@user_elisa = User.create(username: "elisa", email: "elisa@gmail.com", password: "123456")
+User.create(username: "ayub", email: "ayub@gmail.com", password: "123456")
+User.create(username: "lucile", email: "lucile@gmail.com", password: "123456")
+User.create(username: "shuqi", email: "shuqi@gmail.com", password: "123456")
+User.create(username: "elisa", email: "elisa@gmail.com", password: "123456")
 
 puts "Creating pools..."
 
@@ -30,7 +30,7 @@ puts "Creating pools..."
 
 def create_pool(title_index, file_one)
   @title = DESC_TITLE[title_index]
-  @address = Faker::Address.full_address
+  @address = "Southampton"
   @size = SIZES.sample
   @price = rand(70..250)
   @details = DESC_DETAILS.sample

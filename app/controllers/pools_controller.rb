@@ -2,10 +2,22 @@ class PoolsController < ApplicationController
   def show
     set_pool
     @booking = Booking.new
+    @marker =
+      {
+        lat: @pool.latitude,
+        lng: @pool.longitude
+      }
+
   end
 
   def index
     @pools = Pool.all
+    @markers = @pools.geocoded.map do |pool|
+      {
+        lat: pool.latitude,
+        lng: pool.longitude
+      }
+    end
   end
 
   def new

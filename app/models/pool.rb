@@ -5,4 +5,8 @@ class Pool < ApplicationRecord
 
   validates :address, :price, presence: true
   validates :size, inclusion: { in: ['small', 'medium', 'large'] }
+
+  geocoded_by :address
+
+  after_validation :geocode, if: :will_save_change_to_address?
 end
