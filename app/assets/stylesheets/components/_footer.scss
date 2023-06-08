@@ -1,11 +1,9 @@
 .footer-pool {
-  display:flex;
   justify-content: flex-end;
-  position: fixed;
-  background: white;
+  background: $green;
   position: fixed;
   bottom: 0;
-  height: 60px;
+  height: 40px;
   width: 100%;
 }
 
