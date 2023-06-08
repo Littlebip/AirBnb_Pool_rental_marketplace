@@ -22,6 +22,16 @@
         <div class="card-body">
           <h5 class="card-title"><%= pool.title.nil? ? "Amazing pool, perfect for all your summer parties!!" : pool.title %></h5>
           <p><%= pool.price %> €</p>
+          <%= raise %>
+          <% if pool.user_id == current_user.id %>
+            <p><i class="fa-solid fa-face-smile-wink"></i> My pool</p>
+          <%# <% elsif pool.booking.user_id == current_user.id && pool.booking.status == "accepted" %>
+            <%# <p><i class="fa-solid fa-square-check"></i> Booked</p> %>
+          <%# <% elsif pool.booking.user_id == current_user.id && pool.booking.status == "pending" %>
+            <%# <p>Booking pending ...</p> %>
+          <% else %>
+            <p>Book now <i class="fa-solid fa-chevron-right"></i></p>
+          <% end %>
         </div>
       </div>
     <% end %>
