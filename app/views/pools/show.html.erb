@@ -60,13 +60,14 @@
           <%# <div class="col"> %>
             <div class="m-5">
                 <ul class="list-group">
-                  <%# <li class="list-group-item border bg-primary-subtle rounded-4 m-3 p-4 fs-4 text-center"><strong><%= @pool.title.nil? ? "Amazing Pool, perfect for all your pet parties!!" : @pool.title ></strong></li> %>
                   <li class="list-unstyled m-3 p-4 fs-3 text-center"><strong><%= @pool.title.nil? ? "Amazing Pool, perfect for all your pet parties!!" : @pool.title %></strong></li>
-                  <%# <li class="list-group-item border bg-primary-subtle rounded-4 m-3 p-4 fs-4 text-center"><%= @pool.details ></li> %>
-                  <li class="list-group-item border bg-light p-4 rounded-4 m-3"><strong>Address:</strong><br><%= @pool.address %></li>
-                  <li class="list-group-item border bg-light p-4 rounded-4 m-3"><strong>Price:</strong> <br>starting from <%= @pool.price %> € / day</li>
-                  <li class="list-group-item border bg-light p-4 rounded-4 m-3"><strong>Details:</strong><br><%= @pool.details %></li>
-                  <li class="list-group-item border bg-light p-4 rounded-4 m-3"><strong>Size:</strong><br><%= @pool.size %></li>
+
+                  <li class="list-group-item border bg-light p-4 rounded-4 m-3"><i class="fa-solid fa-map-location-dot"></i><br><%= @pool.address %></li>
+                  <li class="list-group-item border bg-light p-4 rounded-4 m-3"><strong><i class="fa-regular fa-credit-card"></i></strong> <br>starting from <%= @pool.price %> € / day</li>
+                  <li class="list-group-item border bg-light p-4 rounded-4 m-3"><strong><i class="fa-solid fa-circle-info"></i></strong><br><%= @pool.details %></li>
+                  <li class="list-group-item border bg-light p-4 rounded-4 m-3"><strong><i class="fa-solid fa-ruler"></i></strong><br><%= @pool.size %></li>
+                  <%# <li class="list-group-item border bg-primary-subtle rounded-4 m-3 p-4 fs-4 text-center"><strong><%= @pool.title.nil? ? "Amazing Pool, perfect for all your pet parties!!" : @pool.title ></strong></li> %>
+
                 </ul>
             </div>
           <%# </div> %>
@@ -83,7 +84,10 @@
               <%= simple_form_for [@pool, @booking], defaults: { label_html: { class: 'fw-bold' }, input_html: { class: 'bg-light rounded-4' } }, data: { controller: 'flatpickr' } do |f| %>
                 <%= f.input :start_date, as: :string, input_html: { data: { flatpickr_target: "startDate" } } %>
                 <%= f.input :end_date, as: :string, input_html: { data: { flatpickr_target: "endDate" } } %>
+<<<<<<< HEAD
+=======
                 <%# <%= f.input :details, as: :select, collection: ['pets', 'toys', 'food & beverage']  %>
+>>>>>>> master
                 <%= f.button :submit, "Book now!", class: "button-main" %>
               <% end %>
             </div>
