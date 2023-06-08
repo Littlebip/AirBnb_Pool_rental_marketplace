@@ -10,20 +10,18 @@
 #big_logo {
   width: 150px;
   height: 150px;
-  margin-left: 500px;
+  margin-left: 540px;
   padding: 15px
 
 }
 
 #new_header {
-  border-bottom: double;
-  border: solid;
-  margin-bottom: 100px;
+  margin-bottom: 10px;
 
 }
 
 .slogan {
-  margin-left: 490px;
+  margin-left: 530px;
 }
 
 .btn_onl {
@@ -31,6 +29,29 @@
 
 }
 
+#pool_title {
+  border-radius: 40px;
+}
+
+#pool_address {
+  border-radius: 40px;
+}
+
+#pool_size {
+  border-radius: 40px;
+}
+
+#pool_price {
+  border-radius: 40px;
+}
+
+#pool_images {
+  border-radius: 40px;
+}
+
+#pool_details {
+  border-radius: 15px;
+}
 @media (max-width: 1040px) {
   .container, .row{
     width: 900px ;

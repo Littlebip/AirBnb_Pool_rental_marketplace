@@ -22,7 +22,7 @@
         <img src="https://source.unsplash.com/random/?pool,<%= counter.sample %>">
         <div class="card-body">
           <h5 class="card-title"><%= pool.title.nil? ? "Amazing pool, perfect for all your summer parties!!" : pool.title %></h5>
-          <p><%= pool.price %> €</p>
+          <p><i class="fa-solid fa-euro-sign"></i> <%= pool.price %> </p>
         </div>
       </div>
     <% end %>
