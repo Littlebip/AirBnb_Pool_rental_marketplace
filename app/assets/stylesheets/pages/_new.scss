@@ -19,7 +19,9 @@
   border-bottom: double;
   border: solid;
   margin-bottom: 100px;
-
+  background-image: linear-gradient(rgba(255, 255, 255, 0.2),rgba(255, 255, 255, 0.2)), asset-url("banner-bg-img.png");
+  background-size: cover;
+  background-position: center;
 }
 
 .slogan {
