@@ -1,6 +1,6 @@
 <div class="container">
-  <% if @bookings.any?%>
-    <% @bookings.each do |booking| %>
+  <% if @bookings.any? %>
+    <% @bookings.reverse.each do |booking| %>
       <div class="w-50 m-3">
         <ul class="list-group rounded-4">
           <li class="list-group-item bg-light"><strong>Starting on:</strong> <%= booking.start_date %></li>
@@ -13,7 +13,6 @@
           <% end %></li>
           <li class="list-group-item bg-light"><strong>Daily price:</strong> <%= @pool.price %> €</li>
           <li class="list-group-item bg-light"><strong>Total price:</strong> <%= @pool.price * @duration %> €</li>
-          <li class="list-group-item bg-light"><strong>Options:</strong> <%= booking.details %></li>
           <li class="list-group-item bg-light"><strong>Booking status:</strong> <%= booking.status %></li>
         </ul>
       </div>
