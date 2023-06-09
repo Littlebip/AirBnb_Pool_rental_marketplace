@@ -18,22 +18,26 @@
   <% @pools.reverse.each do |pool| %>
     <%= link_to pool_path(pool), class: "nav-link" do %>
       <div class="card" style="width: 18rem;">
-        <%= cl_image_tag pool.images.first.key, crop: :fill %>
-        <div class="card-body">
-          <h5 class="card-title"><%= pool.title.nil? ? "Amazing pool, perfect for all your summer parties!" : pool.title %></h5>
-          <div class="card-details">
-            <p><i class="fa-solid fa-euro-sign"></i> <%= pool.price %></p>
-            <% if pool.user_id == current_user.id %>
-              <p><i class="fa-solid fa-face-smile-wink"></i> My pool</p>
-            <%# <% elsif pool.booking.user_id == current_user.id && pool.booking.status == "accepted" %>
-              <%# <p><i class="fa-solid fa-square-check"></i> Booked</p> %>
-            <%# <% elsif pool.booking.user_id == current_user.id && pool.booking.status == "pending" %>
-              <%# <p>Booking pending ...</p> %>
-            <% else %>
-              <p>Book now <i class="fa-solid fa-chevron-right"></i></p>
-            <% end %>
+        <% if pool.images.blank? %>
+          <img src="https://source.unsplash.com/random/?pool" alt="random pic">
+        <% else %>
+          <%= cl_image_tag pool.images.first.key, crop: :fill %>
+        <% end %>
+          <div class="card-body">
+            <h5 class="card-title"><%= pool.title.nil? ? "Amazing pool, perfect for all your summer parties!" : pool.title %></h5>
+            <div class="card-details">
+              <p><i class="fa-solid fa-euro-sign"></i> <%= pool.price %></p>
+              <% if pool.user_id == current_user.id %>
+                <p><i class="fa-solid fa-face-smile-wink"></i> My pool</p>
+              <%# <% elsif pool.booking.user_id == current_user.id && pool.booking.status == "accepted" %>
+                <%# <p><i class="fa-solid fa-square-check"></i> Booked</p> %>
+              <%# <% elsif pool.booking.user_id == current_user.id && pool.booking.status == "pending" %>
+                <%# <p>Booking pending ...</p> %>
+              <% else %>
+                <p>Book now <i class="fa-solid fa-chevron-right"></i></p>
+              <% end %>
+            </div>
           </div>
-        </div>
       </div>
     <% end %>
   <% end %>

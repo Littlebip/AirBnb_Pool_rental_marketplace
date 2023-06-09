@@ -62,4 +62,21 @@ create_pool(7, @file4)
 create_pool(8, @file6)
 create_pool(9, @file8)
 
+# create_pool(1, @file1, @file2)
+# create_pool(2, @file3, @file4)
+# create_pool(3, @file5, @file6)
+# create_pool(4, @file7, @file8)
+# create_pool(5, @file9, @file10)
+# create_pool(6, @file2, @file3)
+# create_pool(7, @file4, @file5)
+# create_pool(8, @file6, @file7)
+# create_pool(9, @file8, @file9)
+
 puts "Seeding finished! Pools ids start from #{Pool.first.id}!"
+
+# pool1.images.attach(io: @file10, filename: "pool2.jpg", content_type: "image/jpg")
+
+# puts "Extra img added!"
+
+# booking seeds
+# how to check if the user is the owner or not?
