@@ -53,19 +53,21 @@
       </button>
     </div>
   <% end %>
-
+</div>
   <div class="container mb-5">
     <div class="details rounded">
       <%# <div class="row row-cols-2"> %>
           <%# <div class="col"> %>
-            <div class="m-5">
-                <ul class="list-group">
-                  <li class="list-unstyled m-3 p-4 fs-3 text-center"><strong><%= @pool.title.nil? ? "Amazing Pool, perfect for all your pet parties!!" : @pool.title %></strong></li>
+          <li class="list-unstyled m-3 p-4 fs-3 text-center"><strong><%= @pool.title.nil? ? "Amazing Pool, perfect for all your pet parties!!" : @pool.title %></strong></li>
 
-                  <li class="list-group-item border bg-light p-4 rounded-4 m-3"><i class="fa-solid fa-map-location-dot"></i><br><%= @pool.address %></li>
-                  <li class="list-group-item border bg-light p-4 rounded-4 m-3"><strong><i class="fa-regular fa-credit-card"></i></strong> <br>starting from <%= @pool.price %> € / day</li>
-                  <li class="list-group-item border bg-light p-4 rounded-4 m-3"><strong><i class="fa-solid fa-circle-info"></i></strong><br><%= @pool.details %></li>
-                  <li class="list-group-item border bg-light p-4 rounded-4 m-3"><strong><i class="fa-solid fa-ruler"></i></strong><br><%= @pool.size %></li>
+            <div class="m-5">
+              <li class="list-group-item border bg-light p-4 rounded-4 m-3 w-50"><strong><i class="fa-solid fa-circle-info"></i></strong><br><%= @pool.details %></li>
+                <ul class="list-group">
+
+
+                  <li class="list-group-item border bg-light p-4 rounded-4  w-50"><i class="fa-solid fa-map-location-dot"></i><br><%= @pool.address %></li>
+                  <li class="list-group-item border bg-light p-4 rounded-4  w-50"><strong><i class="fa-regular fa-credit-card"></i></strong> <br>starting from <%= @pool.price %> € / day</li>
+                  <li class="list-group-item border bg-light p-4 rounded-4  w-50"><strong><i class="fa-solid fa-ruler"></i></strong><br><%= @pool.size %></li>
                   <%# <li class="list-group-item border bg-primary-subtle rounded-4 m-3 p-4 fs-4 text-center"><strong><%= @pool.title.nil? ? "Amazing Pool, perfect for all your pet parties!!" : @pool.title ></strong></li> %>
 
                 </ul>
@@ -99,4 +101,3 @@
      data-controller="map"
      data-map-markers-value="<%= @marker.to_json %>"
      data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
-</div>
