@@ -28,7 +28,7 @@ puts "Creating pools..."
 @file9 = URI.open("https://images.unsplash.com/photo-1613152184920-bc1c4ab7fd1d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzN8fHBvb2x8ZW58MHx8MHx8fDI%3D&auto=format&fit=crop&w=1000&q=60")
 @file10 = URI.open("https://images.unsplash.com/photo-1621245700087-a8617f91cdbe?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mzl8fHBvb2x8ZW58MHx8MHx8fDI%3D&auto=format&fit=crop&w=1000&q=60")
 
-def create_pool(title_index, file_one)
+def create_pool(title_index, file_one, file_two)
   @title = DESC_TITLE[title_index]
   @address = Faker::Address.city
   @size = SIZES.sample
@@ -45,21 +45,24 @@ def create_pool(title_index, file_one)
   )
 
   pool.images.attach(io: file_one, filename: "pool#{title_index}.jpg", content_type: "image/jpg")
-  # pool.images.attach(io: file_two, filename: "pool#{title_index}.jpg", content_type: "image/jpg")
+  pool.images.attach(io: file_two, filename: "pool#{title_index}.jpg", content_type: "image/jpg")
   pool.save
 
   puts "Created pool #{pool.title}"
 end
 
-create_pool(0, @file10)
-create_pool(1, @file1)
-create_pool(2, @file3)
-create_pool(3, @file5)
-create_pool(4, @file7)
-create_pool(5, @file9)
-create_pool(6, @file2)
-create_pool(7, @file4)
-create_pool(8, @file6)
-create_pool(9, @file8)
+create_pool(0, @file10, @file1)
+create_pool(1, @file1, @file2)
+create_pool(2, @file3, @file4)
+create_pool(3, @file5, @file6)
+create_pool(4, @file7, @file8)
+create_pool(5, @file9, @file10)
+create_pool(6, @file2, @file3)
+create_pool(7, @file4, @file5)
+create_pool(8, @file6, @file7)
+create_pool(9, @file8, @file9)
 
 puts "Seeding finished! Pools ids start from #{Pool.first.id}!"
+
+# booking seeds
+# how to check if the user is the owner or not?
