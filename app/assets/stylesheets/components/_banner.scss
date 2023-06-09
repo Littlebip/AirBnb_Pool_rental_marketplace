@@ -1,24 +1,26 @@
 .banner {
   background-size: cover;
   background-position: center;
-  padding: 10px 0;
+  padding: 20px 20px;
+  padding-top: 80px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-image: linear-gradient(rgba(255, 255, 255, 0.2),rgba(255, 255, 255, 0.2)), url("wa2.png")
+  background-image: linear-gradient(rgba(255, 255, 255, 0.2),rgba(255, 255, 255, 0.2)), url("ww3.png")
 }
 
 .banner h1 {
   margin: 0;
   color: $darkerblue;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-  font-size: 100px;
-  font-weight: bold;
+  text-shadow: 1px 1px 1px rgba(53, 170, 160, 0.895);
+  font-size: 40px;
+  // font-weight: bold;
 }
 
 .banner h2 {
   // font-size: 20px;
   color: $darkerblue;
+  padding: 0px;
   // opacity: .7;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   font-weight: 400;
@@ -32,15 +34,16 @@
 
 #banner-btn {
   display: inline-block;
-  margin: 20px 0;
+  margin: 15px 0;
 }
 
 .banner-content {
-  padding: 30px 100px;
+  padding: 20px 100px;
   margin-left: auto;
   margin-right: auto;
 }
 
 .banner-body {
+  padding: 0px;
   display: inline-block;
 }
