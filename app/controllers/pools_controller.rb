@@ -2,11 +2,16 @@ class PoolsController < ApplicationController
   def show
     set_pool
     @booking = Booking.new
-    @marker =
+    @markers =[
       {
         lat: @pool.latitude,
         lng: @pool.longitude
-      }
+      }]
+    # @markers =
+    #   {
+    #     lat: @pool.latitude,
+    #     lng: @pool.longitude
+    #   }
   end
 
   def index
