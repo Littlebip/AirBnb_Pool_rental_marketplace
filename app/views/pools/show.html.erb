@@ -1,6 +1,4 @@
-<%# if current_user == @pool.user_id  ---- display admin view %>
-
-<div class="container">
+<div class="container mb-5">
   <% if @pool.images.exists? %>
     <div id="carouselTailored" class="carousel slide">
       <div class="carousel-inner">
@@ -53,10 +51,8 @@
       </button>
     </div>
   <% end %>
-
   <%# <div> %>
   <h2 class="m-3 p-4 fs-3 text-center"><strong><%= @pool.title.nil? ? "Amazing Pool, perfect for all your pet parties!!" : @pool.title %></strong></h2>
-
   <div class="container mb-5 d-flex align-items-center">
     <div class="details rounded">
         <div class="m-5">
@@ -69,14 +65,12 @@
             </ul>
         </div>
     </div>
-
     <div class="container-map" style="width: 1500px; height: 800px;"
           data-controller="map"
           data-map-markers-value="<%= @markers.to_json %>"
           data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
     </div>
   </div>
-
     <% if current_user.id == @pool.user_id %>
       <%= link_to "See my bookings", pool_bookings_path(@pool), class: "button-main" %>
     <% else %>
@@ -94,9 +88,6 @@
         <%# </div> %>
       </div>
     <% end %>
-
-
-
 </div>
 <div class="footer px-3 mt-5 ">
 </div>
