@@ -1,18 +1,18 @@
 .card {
   overflow: hidden;
-  background: white;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  background: $whiteblue;
+  box-shadow: 0 0 15px grey;
   transition: all 0.3s;
 }
 
-.card:hover {
-  color: $orange;
+.card:hover h5, .card:hover p {
+  color: $mediumblue;
   font-weight: bolder;
 }
 
 .card:active {
-  background-color: $deep-blue;
-  border: 3px solid $deep-blue;
+  background-color: $darkerblue;
+  border: 3px solid $lightishblue;
   box-shadow: none;
 }
 
@@ -26,12 +26,16 @@
   font-size: 16px;
   font-weight: bold;
   margin: 0;
+  color: $darkerblue;
+  transition: all 0.3s;
 }
 
 .card p {
   font-size: 12px;
   opacity: .7;
   margin: 0;
+  color: $darkerblue;
+  transition: all 0.3s;
 }
 
 .card .card-title {

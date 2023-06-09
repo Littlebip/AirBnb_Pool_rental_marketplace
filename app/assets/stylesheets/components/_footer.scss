@@ -1,13 +1,18 @@
 .footer-pool {
   justify-content: flex-end;
-  background: $green;
+  background: $white;
   position: fixed;
   bottom: 0;
   height: 40px;
   width: 100%;
+  box-shadow: 3px 3px 9px $darkerblue;
 }
 
 .list-social {
   // display: inline-block;
   position: relative;
+}
+
+.list-social svg {
+  color: $darkerblue;
 }
