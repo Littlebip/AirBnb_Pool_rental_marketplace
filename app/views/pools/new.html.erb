@@ -6,25 +6,28 @@
   <br>
   <br>
   <br>
+  <br>
   <div class = "row justify-content-center">
     <div class="col-12 col-lg-8">
+      <div class="d-flex justify-content-between">
+        <h1> Rent your pool !</h1>
+        <%= simple_form_for @pool, defaults: { label_html: { class: 'fw-bold' }, input_html: { class: 'bg-secondary-subtle rounded-4' } } do |f| %>
+        <%= f.submit "Put Online!", class: "button-main new-form-btn" %>
+      </div>
+      <div class="d-flex">
 
-      <h3> Rent a pool. Enjoy. Repeat. </h3>
-      <%= simple_form_for @pool do |f| %>
-      <div class="d-flex ">
         <div>
-          <%= f.input :title, label: "Name of the pool" %>
-          <%= f.input :address, label: "Location" %>
-          <%= f.input :size, label: "Size", collection: ["Small", "Medium", "Large"]%>
-          <%= f.input :price, label: "Price" %>
-          <%= f.input :images, as: :file, label: "Add images", input_html: { multiple: true } %>
-          </div>
-          <div>
-          <%= f.input :details, label: "-", class: "description-input", input_html: { placeholder: "Add a description here" } %>
-          <%= f.submit "Put Online!", class: "button-main" %>
-          </div>
-      </div>
-        <% end %>
-      </div>
+          <%= f.input :title, label: false, input_html: { placeholder: "Give your pool a title!" } %>
+          <%= f.input :address, label: false, input_html: { placeholder: "Add your pool address!" } %>
+          <%= f.input :price, label: false, input_html: { placeholder: "What's the price for a day?" } %>
+          <%= f.input :size, label: "How big is your pool?", input_html: { placeholder: "How big is your pool?" }, collection: ["Small - up to 4 people", "Medium - between 4 and 50 people", "Large - more than 50 people"]%>
+          <%= f.input :images, as: :file, label: "Share photos of your pool!", input_html: { multiple: true, placeholder: "Share photos of your pool!" } %>
+        </div>
+        <div>
+          <%= f.input :details, label: false, class: "description-input", input_html: { placeholder: "Can you describe your pool for us?" } %>
+        </div>
+        </div>
+      <% end %>
+    </div>
   </div>
 </div>

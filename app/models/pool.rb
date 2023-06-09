@@ -5,7 +5,7 @@ class Pool < ApplicationRecord
   has_many_attached :images
 
   validates :address, :price, presence: true
-  validates :size, inclusion: { in: ['small', 'medium', 'large'] }
+  # validates :size, inclusion: { in: ['small', 'medium', 'large'] }
 
   geocoded_by :address
 
