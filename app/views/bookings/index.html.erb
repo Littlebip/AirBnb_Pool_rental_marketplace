@@ -3,9 +3,9 @@
     <% @bookings.each do |booking| %>
       <div class="w-50 m-3">
         <ul class="list-group rounded-4">
-          <li class="list-group-item bg-light"><strong>Starting on:</strong> <%= (booking.start_date).strftime("%-d %B %Y") %></li>
-          <li class="list-group-item bg-light"><strong>Ending on:</strong> <%= (booking.end_date).strftime("%-d %B %Y") %></li>
-          <li class="list-group-item bg-light"><strong>Total duration:</strong> <%= @duration = (booking.end_date - booking.start_date).fdiv(86400).numerator %>
+          <li class="list-group-item border bg-light p-4 rounded-4 m-3"><strong>Starting on:</strong> <%= (booking.start_date).strftime("%-d %B %Y") %></li>
+          <li class="list-group-item border bg-light p-4 rounded-4 m-3"><strong>Ending on:</strong> <%= (booking.end_date).strftime("%-d %B %Y") %></li>
+          <li class="list-group-item border bg-light p-4 rounded-4 m-3"><strong>Total duration:</strong> <%= @duration = (booking.end_date - booking.start_date).fdiv(86400).numerator %>
           <% if @duration == 1 %>
             <%= 'day' %>
           <% else %>

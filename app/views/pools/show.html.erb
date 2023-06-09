@@ -1,6 +1,6 @@
 <%# if current_user == @pool.user_id  ---- display admin view %>
 
-<div class="container">
+<div class="container mb-5">
   <% if @pool.images.exists? %>
     <div id="carouselTailored" class="carousel slide">
       <div class="carousel-inner">
@@ -96,12 +96,5 @@
     <% end %>
 
 
-<<<<<<< HEAD
-<div style="width: 600px; height: 600px;"
-     data-controller="map"
-     data-map-markers-value="<%= @marker.to_json %>"
-     data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
-=======
 
 </div>
->>>>>>> master
