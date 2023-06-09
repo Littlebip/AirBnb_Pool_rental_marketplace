@@ -1,11 +1,12 @@
 <%# <div class = 'container justify-content-center' id = "new_header">
 <img alt="alttext" class="logo" id = "big_logo" src="/assets/SimPool logo - detoured.png">
-<p class = "slogan">Rent somebody's pool. Rent your pool to others.<p>
+<p class = "slogan">Rent a pool. Enjoy. Repeat.<p>
 </div> %>
-<div class="container" id="new_header">
-  <%# <br>
+<div class = "container " id = "new_header">
   <br>
-  <br> %>
+  <br>
+  <br>
+  <br>
   <div class = "row justify-content-center">
     <div class="col-12 col-lg-8">
       <div class="d-flex justify-content-between">
@@ -14,17 +15,6 @@
         <%= f.submit "Put Online!", class: "button-main new-form-btn" %>
       </div>
       <div class="d-flex">
-          <%# <div>
-            <%= f.input :title, label: "What is the name of the pool?" %>
-            <%# <%= f.input :address, label: "Where is your pool?" %>
-            <%# <%= f.input :size, label: "What size is your pool?", collection: ["small - can fit up to 4 people in", "medium - can fit between 4 and 50 people in", "large - can fit more than 50 people in"]%>
-            <%# <%= f.input :price, label: "How much will it be?" %>
-            <%# <%= f.input :images, as: :file, label: "Add images", input_html: { multiple: true } %>
-          <%# </div> %>
-          <%# <div> %>
-            <%# <%= f.input :details, label: "-", class: "description-input", input_html: { placeholder: "Add a description here" } %>
-            <%# <%= f.submit "Put Online!", class: "button-main new-form-btn" %>
-          <%# </div> %>
 
         <div>
           <%= f.input :title, label: false, input_html: { placeholder: "Give your pool a title!" } %>

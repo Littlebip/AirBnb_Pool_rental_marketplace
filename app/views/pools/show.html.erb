@@ -54,18 +54,19 @@
   <%# <div> %>
   <h2 class="m-3 p-4 fs-3 text-center"><strong><%= @pool.title.nil? ? "Amazing Pool, perfect for all your pet parties!!" : @pool.title %></strong></h2>
   <div class="container mb-5 d-flex align-items-center">
-    <div class="details rounded">
+    <div class="container-info details rounded">
         <div class="m-5">
-            <ul class="list-group">
-              <li class="list-group-item border bg-light p-4 rounded-4 m-3"><i class="fa-solid fa-map-location-dot"></i><br><%= @pool.address %></li>
-              <li class="list-group-item border bg-light p-4 rounded-4 m-3"><strong><i class="fa-regular fa-credit-card"></i></strong> <br>starting from <%= @pool.price %> € / day</li>
-              <li class="list-group-item border bg-light p-4 rounded-4 m-3"><strong><i class="fa-solid fa-circle-info"></i></strong><br><%= @pool.details %></li>
-              <li class="list-group-item border bg-light p-4 rounded-4 m-3"><strong><i class="fa-solid fa-ruler"></i></strong><br><%= @pool.size %></li>
+            <ul class="list-group border rounded-4">
+              <li class="list-group-item bg-light p-4"><i class="fa-solid fa-map-location-dot"></i><br><%= @pool.address %></li>
+              <li class="list-group-item bg-light p-4 "><strong><i class="fa-regular fa-credit-card"></i></strong> <br>starting from <%= @pool.price %> € / day</li>
+              <li class="list-group-item bg-light p-4"><strong><i class="fa-solid fa-ruler"></i></strong><br><%= @pool.size %></li>
+              <li class="list-group-item bg-light p-4"><strong><i class="fa-solid fa-circle-info"></i></strong><br><%= @pool.details %></li>
               <%# <li class="list-group-item border bg-primary-subtle rounded-4 m-3 p-4 fs-4 text-center"><strong><%= @pool.title.nil? ? "Amazing Pool, perfect for all your pet parties!!" : @pool.title ></strong></li> %>
             </ul>
         </div>
     </div>
-    <div class="container-map" style="width: 1500px; height: 800px;"
+
+    <div class="container-map" style="height: 600px;"
           data-controller="map"
           data-map-markers-value="<%= @markers.to_json %>"
           data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
@@ -74,10 +75,10 @@
     <% if current_user.id == @pool.user_id %>
       <%= link_to "See my bookings", pool_bookings_path(@pool), class: "button-main" %>
     <% else %>
-      <div class="details bg-light mb-5 p-4 rounded-4">
+      <div class="m-5 details bg-light mb-5 p-4 rounded-4">
         <%# <div class="row row-cols-2"> %>
           <%# <div class="col"> %>
-            <div class="mb-5 p-3">
+            <div class="m-5 p-3">
               <%= simple_form_for [@pool, @booking], defaults: { label_html: { class: 'fw-bold' }, input_html: { class: 'bg-light rounded-4' } }, data: { controller: 'flatpickr' } do |f| %>
                 <%= f.input :start_date, as: :string, input_html: { data: { flatpickr_target: "startDate" } } %>
                 <%= f.input :end_date, as: :string, input_html: { data: { flatpickr_target: "endDate" }, id: "end_date" } %>
@@ -88,6 +89,7 @@
         <%# </div> %>
       </div>
     <% end %>
-</div>
-<div class="footer px-3 mt-5 ">
+
+
+
 </div>

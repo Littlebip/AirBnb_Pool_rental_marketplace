@@ -1,11 +1,10 @@
 .pools-grid {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  gap: 1em;
+  gap: 5em;
   margin: auto;
-  width: 80vw;
-  padding-top: 10px;
-  margin-bottom: 100px;
+  padding-top: 40px;
+  margin-bottom: 70px;
 
   .banner {
     color: #0cde41;
