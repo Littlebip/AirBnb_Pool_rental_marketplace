@@ -1,7 +1,7 @@
-<div class = 'container justify-content-center' id = "new_header">
+<%# <div class = 'container justify-content-center' id = "new_header">
 <img alt="alttext" class="logo" id = "big_logo" src="/assets/SimPool logo - detoured.png">
-<p class = "slogan">Rent somebody's pool. Rent your pool to others.<p>
-</div>
+<p class = "slogan">Rent a pool. Enjoy. Repeat.<p>
+</div> %>
 <div class = "container " id = "new_header">
   <br>
   <br>
@@ -9,14 +9,14 @@
   <div class = "row justify-content-center">
     <div class="col-12 col-lg-8">
 
-      <h3> Rent your pool </h3>
+      <h3> Rent a pool. Enjoy. Repeat. </h3>
       <%= simple_form_for @pool do |f| %>
       <div class="d-flex ">
         <div>
-          <%= f.input :title, label: "What is the name of the pool?" %>
-          <%= f.input :address, label: "Where is your pool?" %>
-          <%= f.input :size, label: "What size is your pool?", collection: ["small", "medium", "large"]%>
-          <%= f.input :price, label: "How much will it be?" %>
+          <%= f.input :title, label: "Name of the pool" %>
+          <%= f.input :address, label: "Location" %>
+          <%= f.input :size, label: "Size", collection: ["Small", "Medium", "Large"]%>
+          <%= f.input :price, label: "Price" %>
           <%= f.input :images, as: :file, label: "Add images", input_html: { multiple: true } %>
           </div>
           <div>
