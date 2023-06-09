@@ -31,8 +31,11 @@ class PoolsController < ApplicationController
   def create
     @pool = Pool.new(pool_params)
     @pool.user = current_user
-    @pool.save
-    redirect_to pool_path(@pool)
+    if @pool.save
+      redirect_to pool_path(@pool)
+    else
+      render :new, status: :unprocessable_entity
+    end
   end
 
   private

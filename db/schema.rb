@@ -46,7 +46,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_08_121816) do
     t.bigint "user_id", null: false
     t.bigint "pool_id", null: false
     t.datetime "start_date"
-    t.text "details"
     t.datetime "end_date"
     t.string "status"
     t.datetime "created_at", null: false
