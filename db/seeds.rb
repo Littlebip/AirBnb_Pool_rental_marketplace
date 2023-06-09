@@ -8,6 +8,7 @@ Pool.destroy_all
 SIZES = ["small", "medium", "large"]
 DESC_TITLE = ["Cute little swimming pool in the middle of the forest", "The best pool playground for all pet lovers!", "Quiet swimming pool retreat for busy people", "Fun urban pool with many toys available", "The best pool in the city! Rent it before it's too late!", "Waterfall pool by the seaside, great night view", "Medium-sized pool for young and old", "Countryside garden pool to rent! Best seller!", "Comfortable and fun homestay, with a great pool!", "Amazing rooftop pool! Don't miss our cocktail maker!"]
 DESC_DETAILS = "The fascinating, open air swimming pool is located near a tremendous ocean with its beautiful view. Swimming pool is construct with the cool blue tiles that enhance the color of water in the pool. Day is not so hot due to slight breeze that touching the people faces softly. Water in the pool is blue as the sky and clean as the crystal. The cool blue water of the pool is soothing the eyes and refreshing mind and body. The place is busy and crowded with visitors. People there want to dive in the deep of water. Youngsters dive in the pool with eyes closed, arms outstretched feeling their heart before feeling the depth of water. Splashing of water on others seems very interesting and a great fun for children."
+CITIES = ["Berlin", "New York", "London", "Paris", "Monaco", "Marseille", "Shanghai", "Buenos Aires", "Madrid", "Lisbon"]
 
 puts "Creating users..."
 User.create(username: "ayub", email: "ayub@gmail.com", password: "123456")
@@ -30,7 +31,7 @@ puts "Creating pools..."
 
 def create_pool(title_index, file_one)
   @title = DESC_TITLE[title_index]
-  @address = Faker::Address.city
+  @address = CITIES[title_index]
   @size = SIZES.sample
   @price = rand(70..250)
   @details = DESC_DETAILS
