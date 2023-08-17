@@ -1,4 +1,6 @@
 class PoolsController < ApplicationController
+  skip_before_action :authenticate_user!, only: %i[index show]
+
   def show
     set_pool
     @booking = Booking.new

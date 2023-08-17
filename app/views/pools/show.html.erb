@@ -72,7 +72,7 @@
           data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
     </div>
   </div>
-    <% if current_user.id == @pool.user_id %>
+    <% if user_signed_in? && current_user.id == @pool.user_id %>
       <%= link_to "See my bookings", pool_bookings_path(@pool), class: "button-main" %>
     <% else %>
       <div class="m-5 details bg-light mb-5 p-4 rounded-4">
